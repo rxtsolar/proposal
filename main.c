@@ -3,8 +3,8 @@
 #include <string.h>
 
 #define BUFFER_SIZE 256
-#define WORDS_PATH "/home/guangyu/Documents/engagement/words"
-#define HEART_PATH "/home/guangyu/Documents/engagement/heart"
+#define WORDS_PATH "words"
+#define HEART_PATH "heart"
 #define USLEEP_TIME 60000
 #define SCREEN_HEIGHT 44
 
@@ -13,6 +13,12 @@ void clear()
 	int i;
 	for (i = 0; i < SCREEN_HEIGHT; i++)
 		printf("\n");
+}
+
+void bluffing()
+{
+	printf("Mr. Sun has left a message for Ms. Zhang. Press ENTER to check the secret message: ");
+	getchar();
 }
 
 void show_pic(char *name)
@@ -57,11 +63,12 @@ void wait_for_answer()
 
 void congrats()
 {
-	printf("Congratulations! You are engaged!\n");
+	printf("Congratulations! You are engaged! And will be sharing root privilege on Mr. Sun's laptop, also his life!\n");
 }
 
 int main(int argc, char *argv[])
 {
+	bluffing();
 	clear();
 	show_pic(WORDS_PATH);
 	wait_for_answer();
